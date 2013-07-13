@@ -1,4 +1,5 @@
 SharinatorServer::Application.routes.draw do
+  #get "vk/authenticate"
   get "vk" => "vk#authenticate"
   resources :users
 
