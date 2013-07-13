@@ -1,4 +1,5 @@
 SharinatorServer::Application.routes.draw do
+  get "vk" => "vk#authenticate"
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
