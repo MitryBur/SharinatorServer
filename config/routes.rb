@@ -1,7 +1,7 @@
 SharinatorServer::Application.routes.draw do
   resources :socials
 
-  ;get "vk/test"
+  get "vk/test"
 
   get "vk" => "vk#authenticate"
   resources :users
