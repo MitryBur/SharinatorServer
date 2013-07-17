@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1061e149-8ead-4326-9ade-1ab9242e0323" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" afterPath="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/vk_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SharinatorServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/.gitignore" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373535001739" ignored="false" />
-    <file path="/Dummy.txt" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374095491620" ignored="false" />
+    <file path="/Dummy.txt" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374097631293" ignored="false" />
     <file path="/application_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373550275585" ignored="false" />
     <file path="/a.rxml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374094655516" ignored="false" />
     <file path="/routes.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374011437429" ignored="false" />
-    <file path="/vk_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374095357623" ignored="false" />
+    <file path="/vk_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374098470840" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/application.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/database.yml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/routes.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373796065652" ignored="false" />
@@ -43,7 +43,7 @@
     <file path="/social.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374009470205" ignored="false" />
     <file path="/user.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374009961590" ignored="false" />
     <file path="/test.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374011648920" ignored="false" />
-    <file path="/index.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374012100261" ignored="false" />
+    <file path="/index.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374096970727" ignored="false" />
     <file path="/show.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374013099631" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vk_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="vk_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/vk_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="28" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.0">
+            <state line="21" column="16" selection-start="742" selection-end="742" vertical-scroll-proportion="0.6040609">
               <folding />
             </state>
           </provider>
@@ -103,7 +103,25 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="2" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
+            <state line="31" column="119" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="35" selection-start="290" selection-end="290" vertical-scroll-proportion="-11.115385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="90" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.33333334">
               <folding />
             </state>
           </provider>
@@ -118,19 +136,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20130711125143_create_users.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20130711125143_create_users.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authenticate.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="authenticate.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/vk/authenticate.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="0.099270076">
+            <state line="4" column="126" selection-start="111" selection-end="111" vertical-scroll-proportion="-2.6153846">
               <folding />
             </state>
           </provider>
@@ -138,15 +147,6 @@
       </file>
       <file leaf-file-name="test.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/vk/test.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20130716210927_create_socials.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20130716210927_create_socials.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -182,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
         <option value="$PROJECT_DIR$/bin/rails" />
         <option value="$PROJECT_DIR$/config/boot.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
@@ -192,12 +191,13 @@
         <option value="$PROJECT_DIR$/db/migrate/20130716210927_create_socials.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/vk/test.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
       </list>
     </option>
   </component>
@@ -268,6 +268,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -708,7 +709,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -723,12 +723,12 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="IRB console.Rails console: SharinatorServer">
+  <component name="RunManager" selected="Rails.Development: SharinatorServer">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="SharinatorServer" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -1100,7 +1100,11 @@
       <created>1374095495624</created>
       <updated>1374095495624</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Old user_id stuff">
+      <created>1374097633118</created>
+      <updated>1374097633118</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1128,20 +1132,20 @@
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17698154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17659806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.330076" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2379936" sideWeight="0.82301843" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24066168" sideWeight="0.669924" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22909881" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22860238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1189,7 +1193,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added social scaffold" />
+    <option name="LAST_COMMIT_MESSAGE" value="Old user_id stuff" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1213,25 +1217,12 @@
     <MESSAGE value="Added social model&#10;&#10;" />
     <MESSAGE value="Test new vk requests&#10;" />
     <MESSAGE value="Added social scaffold" />
+    <MESSAGE value="Old user_id stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="150" selection-end="150" vertical-scroll-proportion="-6.5384617">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/socials/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1274,13 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/vk/test.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1309,9 +1293,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/vk_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/vk/authenticate.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="28" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.0">
+        <state line="4" column="126" selection-start="111" selection-end="111" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="119" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="35" selection-start="290" selection-end="290" vertical-scroll-proportion="-11.115385">
           <folding />
         </state>
       </provider>
@@ -1323,9 +1321,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/vk/authenticate.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="111" selection-end="111" vertical-scroll-proportion="0.099270076">
+        <state line="1" column="90" selection-start="58" selection-end="58" vertical-scroll-proportion="-0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/vk_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="16" selection-start="742" selection-end="742" vertical-scroll-proportion="0.6040609">
           <folding />
         </state>
       </provider>

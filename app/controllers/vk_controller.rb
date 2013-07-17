@@ -14,13 +14,12 @@ class VkController < ApplicationController
     token = params[:access_token]
     uid = params[:user_id]
     uid_full = 'id'+uid.to_s
-
     if !token.empty?
       #User.create :user_id=> 111, :social_id=>222;
 	    @res = request_vk_api params: {token: token, method: 'users.get', vk_params:'#{uid}'}
-	    @resBody = @res.Body
+	    @resBody = @res.body
 	    @exists = 'exists'
-	  	if !Users.social.exists? :social_id.eql? uid_full
+	  	if !User.find_by_social_id :social_id.eql? uid_full
 			  puts 'blah bla'
 		    @exits = 'Does not exist'
 		  end
