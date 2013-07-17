@@ -13,24 +13,23 @@ class VkController < ApplicationController
 	def authenticate
     token = params[:access_token]
     uid = params[:user_id]
-    uid_full = 'id'+uid.to_s
+    @uid_full = 'id'+uid.to_s
     if !token.empty?
-      #User.create :user_id=> 111, :social_id=>222;
-	    @res = request_vk_api params: {token: token, method: 'users.get', vk_params:'#{uid}'}
+      @res = request_vk_api token: token, method: 'users.get', vk_params:"#{uid}"
 	    @resBody = @res.body
-	    @exists = 'exists'
-	  	if !User.find_by_social_id :social_id.eql? uid_full
-			  puts 'blah bla'
-		    @exits = 'Does not exist'
-		  end
+	    jsonRes = JSON.parse @resBody
+	    @exists = 'User exists'
+	    @user_data = jsonRes['response'][0]
+	    unless User.find_by_social_id "#{@uid_full}"
+			    @exists = 'User did not exist. Created one, buddy.'
+					create_user social_id: @uid_full, name: @user_data['first_name'], surname: @user_data['last_name']
+	    end
     end
   end
-  def test
-	  @user = User.create social_id: 'id6157'
-	  @social = Social.create social_id: 'id6151', name: 'beatch', surname: 'family'
-	  @user.social = @social
-  end
-  def add_user_information
 
+  def create_user params
+	  @user = User.create social_id: params[:social_id]
+	  @social = Social.create social_id: params[:social_id], name: params[:name], surname: params[:surname]
+		@user.social = @social
   end
 end
