@@ -15,4 +15,9 @@ class VkController < ApplicationController
       @resBody = res.body
     end
   end
+  def test
+	  @user = User.create social_id: 'id6157'
+	  @social = Social.create social_id: 'id6151', name: 'beatch', surname: 'family'
+	  @user.social = @social
+  end
 end
