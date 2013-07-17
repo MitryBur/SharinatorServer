@@ -1,0 +1,31 @@
+<h1>Listing socials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Social</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @socials.each do |social| %>
+      <tr>
+        <td><%= social.name %></td>
+        <td><%= social.surname %></td>
+        <td><%= social.social_id %></td>
+        <td><%= link_to 'Show', social %></td>
+        <td><%= link_to 'Edit', edit_social_path(social) %></td>
+        <td><%= link_to 'Destroy', social, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Social', new_social_path %>
