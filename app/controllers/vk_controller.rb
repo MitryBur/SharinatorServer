@@ -14,6 +14,7 @@ class VkController < ApplicationController
     token = params[:access_token]
     uid = params[:user_id]
     uid_full = 'id'+uid.to_s
+
     if !token.empty?
       #User.create :user_id=> 111, :social_id=>222;
 	    @res = request_vk_api params: {token: token, method: 'users.get', vk_params:'#{uid}'}
