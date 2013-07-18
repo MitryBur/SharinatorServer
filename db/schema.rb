@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718110121) do
+ActiveRecord::Schema.define(version: 20130718202644) do
 
   create_table "attendances", force: true do |t|
     t.integer  "user_id"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20130718110121) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "members", ["event_id"], name: "index_members_on_event_id"
+  add_index "members", ["user_id"], name: "index_members_on_user_id"
 
   create_table "socials", force: true do |t|
     t.integer  "user_id"

@@ -1,8 +1,5 @@
 class Event < ActiveRecord::Base
-		has_many :attendances
-		has_many :users, through: :attendances
-
-		def add_attendance id
-
-		end
+		has_many :members
+		has_many :users, through: :members
+		#accepts_nested_attributes_for :users
 end

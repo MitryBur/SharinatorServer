@@ -1,6 +1,6 @@
-class CreateAttendances < ActiveRecord::Migration
+class CreateMembers < ActiveRecord::Migration
   def change
-		  create_table :attendances do |t|
+    create_table :members do |t|
       t.references :user, index: true
       t.references :event, index: true
 

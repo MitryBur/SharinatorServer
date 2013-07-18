@@ -1,6 +1,3 @@
-<h1>Vk#authenticate</h1>
-<p>Url is <%= @url%>
-<p>Response is <%=@resBody %>
-</p><p>User ID is <%=@uid %></p>
-</p><p><%=@exists %></p>
-
+<%if @user.id%>
+<%=@user.id%>
+<% end %>

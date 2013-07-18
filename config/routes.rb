@@ -1,4 +1,6 @@
 SharinatorServer::Application.routes.draw do
+  resources :members
+
   resources :events
 
   resources :socials

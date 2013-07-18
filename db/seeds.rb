@@ -19,3 +19,12 @@ socials_list.each do |name, surname, vk_id|
 		social = Social.create name: name, surname: surname, vk_id: vk_id
 		user.social = social
 end
+
+events_list = [
+		['Party','Awesome party', 1],
+		['Hawaii','Crap party', 2]
+]
+
+events_list.each do |title, description, owner_id|
+		Event.create title: title, description: description, owner_id: owner_id
+end
