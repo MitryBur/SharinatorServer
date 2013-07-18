@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+socials_list = [
+		['Petr', 'Ivanov', 31],
+		['Valery', 'Gryaznova', 32],
+		['Justin', 'Timberlake', 33],
+		['Snoop', 'Dogg', 34],
+		['Dirty', 'Monk', 35],
+		['Andrew', 'Po', 36]
+]
+
+socials_list.each do |name, surname, social_id|
+		user = User.create social_id: social_id
+		social = Social.create name: name, surname: surname, social_id: social_id
+		user.social = social
+end
