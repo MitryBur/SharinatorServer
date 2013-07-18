@@ -14,8 +14,8 @@ socials_list = [
 		['Andrew', 'Po', 36]
 ]
 
-socials_list.each do |name, surname, social_id|
-		user = User.create social_id: social_id
-		social = Social.create name: name, surname: surname, social_id: social_id
+socials_list.each do |name, surname, vk_id|
+		user = User.create
+		social = Social.create name: name, surname: surname, vk_id: vk_id
 		user.social = social
 end

@@ -5,7 +5,7 @@
     <tr>
       <th>ID</th>
       <th>User name</th>
-      <th>Social</th>
+      <th>Vk ID</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,13 +16,13 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-       <td><%if user.social%>
-                <%= user.social.name %>
-            <% else %>
-                Not found
-	        <% end %>
-        </td>
-        <td><%= user.social_id %></td>
+        <%if user.social%>
+          <td> <%= user.social.name %> </td>
+          <td> <%= user.social.vk_id %> </td>
+        <% else %>
+          <td> Name not found </td>
+          <td> ID not found </td>
+       <% end %>
 
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

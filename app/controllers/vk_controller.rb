@@ -20,16 +20,16 @@ class VkController < ApplicationController
 	    jsonRes = JSON.parse @resBody
 	    @exists = 'User exists'
 	    @user_data = jsonRes['response'][0]
-	    unless User.find_by_social_id "#{@uid}"
+	    unless Social.find_by_vk_id @uid
 			    @exists = 'User did not exist. Created one, buddy.'
-					create_user social_id: @uid, name: @user_data['first_name'], surname: @user_data['last_name']
+					create_user vk_id: @uid, name: @user_data['first_name'], surname: @user_data['last_name']
 	    end
     end
   end
 
   def create_user params
-	  @user = User.create social_id: params[:social_id]
-	  @social = Social.create social_id: params[:social_id], name: params[:name], surname: params[:surname]
+	  @user = User.create
+	  @social = Social.create vk_id: params[:vk_id], name: params[:name], surname: params[:surname]
 		@user.social = @social
   end
 end

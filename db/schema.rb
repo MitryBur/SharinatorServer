@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718083724) do
+ActiveRecord::Schema.define(version: 20130718110121) do
 
   create_table "attendances", force: true do |t|
     t.integer  "user_id"
@@ -35,13 +35,12 @@ ActiveRecord::Schema.define(version: 20130718083724) do
     t.integer  "user_id"
     t.text     "name"
     t.text     "surname"
-    t.integer  "social_id",  limit: 255
+    t.integer  "vk_id",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.integer  "social_id",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
