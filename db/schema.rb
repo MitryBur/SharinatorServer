@@ -11,19 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130716210927) do
+ActiveRecord::Schema.define(version: 20130718080034) do
+
+  create_table "attendances", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "title"
+    t.string   "owner_id"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "socials", force: true do |t|
     t.integer  "user_id"
     t.text     "name"
     t.text     "surname"
-    t.string   "social_id"
+    t.integer  "social_id",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "social_id"
+    t.integer  "social_id",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

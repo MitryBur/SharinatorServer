@@ -12,17 +12,17 @@ class VkController < ApplicationController
     end
 	def authenticate
     token = params[:access_token]
-    uid = params[:user_id]
-    @uid_full = 'id'+uid.to_s
+    @uid = params[:user_id]
+
     if !token.empty?
-      @res = request_vk_api token: token, method: 'users.get', vk_params:"#{uid}"
+      @res = request_vk_api token: token, method: 'users.get', vk_params:"#{@uid}"
 	    @resBody = @res.body
 	    jsonRes = JSON.parse @resBody
 	    @exists = 'User exists'
 	    @user_data = jsonRes['response'][0]
-	    unless User.find_by_social_id "#{@uid_full}"
+	    unless User.find_by_social_id "#{@uid}"
 			    @exists = 'User did not exist. Created one, buddy.'
-					create_user social_id: @uid_full, name: @user_data['first_name'], surname: @user_data['last_name']
+					create_user social_id: @uid, name: @user_data['first_name'], surname: @user_data['last_name']
 	    end
     end
   end
