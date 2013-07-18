@@ -3,12 +3,12 @@ class SocialidToInteger < ActiveRecord::Migration
 				connection.execute(%q{
             alter table socials
             alter column social_id
-            type integer using cast(number as integer)
+            type integer using cast(social_id as integer)
         })
 				connection.execute(%q{
             alter table users
             alter column social_id
-            type integer using cast(number as integer)
+            type integer using cast(social_id as integer)
         })
 		end
 end
