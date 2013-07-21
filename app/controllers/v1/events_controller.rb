@@ -1,4 +1,5 @@
-class EventsController < ApplicationController
+class V1::EventsController < ApplicationController
+
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events

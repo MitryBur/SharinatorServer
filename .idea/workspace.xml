@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1061e149-8ead-4326-9ade-1ab9242e0323" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/member.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/member_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/members.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/members.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/members.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/members_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/members_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/members_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/helpers/members_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/members/show.json.jbuilder" />
-      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\models\attendance.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\test\fixtures\attendances.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\test\models\attendance_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\test\models\attendances_test.rb" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\db\migrate\20130718083724_create_attendances.rb" afterPath="$PROJECT_DIR$/db/migrate/20130718202644_create_members.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/socials/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/socials/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" afterPath="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/event.rb" afterPath="$PROJECT_DIR$/app/models/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/index.html.erb" afterPath="$PROJECT_DIR$/app/views/events/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/events/index.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/users/index.json.jbuilder" />
+    <list default="true" id="1061e149-8ead-4326-9ade-1ab9242e0323" name="Default" comment="Added events and event-user relationships">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/v1/application_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/vk_api.rb" />
+      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\application_controller.rb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\vk\authenticate.html.erb" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/events_controller.rb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\members_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/members_controller.rb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\socials_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/socials_controller.rb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/users_controller.rb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\vk_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/vk_controller.rb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\_form.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/events/_form.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\edit.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/events/edit.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\index.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/events/index.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/events/index.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\new.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/events/new.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\show.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/events/show.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\events\show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/events/show.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\layouts\application.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/layouts/application.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\_form.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/members/_form.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\edit.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/members/edit.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\index.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/members/index.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/members/index.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\new.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/members/new.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\show.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/members/show.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\members\show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/members/show.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\_form.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/socials/_form.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\edit.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/socials/edit.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\index.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/socials/index.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/socials/index.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\new.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/socials/new.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\show.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/socials/show.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\socials\show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/socials/show.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\_form.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/_form.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\destroy.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/destroy.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\edit.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/edit.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\index.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/index.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/users/index.json.jbuilder" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\new.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/new.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\show.html.erb" afterPath="$PROJECT_DIR$/app/views/v1/users/show.html.erb" />
+      <change type="MOVED" beforePath="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\users\show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/users/show.json.jbuilder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/socials/show.html.erb" afterPath="$PROJECT_DIR$/app/views/socials/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/show.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/events/show.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/vk_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/social.rb" afterPath="$PROJECT_DIR$/app/models/social.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SharinatorServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/.gitignore" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373535001739" ignored="false" />
-    <file path="/Dummy.txt" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374187666645" ignored="false" />
-    <file path="/application_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373550275585" ignored="false" />
-    <file path="/a.rxml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374094655516" ignored="false" />
-    <file path="/routes.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374011437429" ignored="false" />
-    <file path="/vk_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374187057754" ignored="false" />
+    <file path="/Dummy.txt" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374409910090" ignored="false" />
+    <file path="/application_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374433906027" ignored="false" />
+    <file path="/a.rxml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374431169017" ignored="false" />
+    <file path="/routes.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374434909615" ignored="false" />
+    <file path="/vk_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374432492389" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/application.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/database.yml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/routes.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373796065652" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/app/views/layouts/application.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/app/assets/javascripts/application.js" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373655487060" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/app/assets/stylesheets/application.css" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373828880071" ignored="false" />
-    <file path="/authenticate.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374185898034" ignored="false" />
+    <file path="/authenticate.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374431690614" ignored="false" />
     <file path="/vk.css.scss" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373735648420" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/initializers/wrap_parameters.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373740120356" ignored="false" />
     <file path="$PROJECT_DIR$/../SharinatorWebUi/config/initializers/filter_parameter_logging.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1373740120356" ignored="false" />
@@ -76,7 +82,7 @@
     <file path="/20130716203817_rename_userid.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374008143979" ignored="false" />
     <file path="/20130716210436_remove_userid.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374008740575" ignored="false" />
     <file path="/20130716210927_create_socials.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374134557968" ignored="false" />
-    <file path="/social.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374009470205" ignored="false" />
+    <file path="/social.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374424966536" ignored="false" />
     <file path="/user.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374179278874" ignored="false" />
     <file path="/test.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374011648920" ignored="false" />
     <file path="/index.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374182748388" ignored="false" />
@@ -88,14 +94,16 @@
     <file path="/seeds.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374179768180" ignored="false" />
     <file path="/20130718105556_remove_social_id_column.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374144972103" ignored="false" />
     <file path="/20130718110121_rename_social_id.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374145299350" ignored="false" />
-    <file path="/events_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374183487880" ignored="false" />
-    <file path="/users_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374174370504" ignored="false" />
+    <file path="/events_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374434311704" ignored="false" />
+    <file path="/users_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374432486642" ignored="false" />
     <file path="/show.json.jbuilder" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374183793835" ignored="false" />
     <file path="/index.json.jbuilder" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374183757363" ignored="false" />
-    <file path="/members_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374182978623" ignored="false" />
+    <file path="/members_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374432477486" ignored="false" />
     <file path="/member.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374183066208" ignored="false" />
     <file path="/authenticate.json.jbuilder" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374185049669" ignored="false" />
     <file path="/_form.html.erb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374187519219" ignored="false" />
+    <file path="/vk_communicator.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374431932612" ignored="false" />
+    <file path="/socials_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374432482369" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,62 +123,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/socials/_form.html.erb">
+      <file leaf-file-name="social.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/social.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="37" selection-start="457" selection-end="457" vertical-scroll-proportion="-11.115385">
+            <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/socials/edit.html.erb">
+      <file leaf-file-name="member.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/member.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="destroy.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/destroy.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="16" selection-start="85" selection-end="85" vertical-scroll-proportion="0.123726346">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/socials/index.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/v1/socials/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
@@ -178,28 +150,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/socials/new.html.erb">
+      <file leaf-file-name="event.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/event.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/socials/show.html.erb">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/v1/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="201" selection-end="201" vertical-scroll-proportion="-9.153846">
+            <state line="8" column="93" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
+      <file leaf-file-name="events_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/v1/events_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="-7.8461537">
+            <state line="74" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/v1/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vk_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/v1/vk_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="144" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="9" selection-start="158" selection-end="158" vertical-scroll-proportion="0.19738752">
               <folding />
             </state>
           </provider>
@@ -233,22 +232,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/views/members/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/events/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/member.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/members_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/event.rb" />
-        <option value="$PROJECT_DIR$/app/views/events/index.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/views/events/show.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/vk/authenticate.json.jbuilder" />
-        <option value="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/socials/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/socials/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/social.rb" />
+        <option value="$PROJECT_DIR$/app/views/vk/authenticate.html.erb" />
+        <option value="$PROJECT_DIR$/lib/vk_communicator.rb" />
+        <option value="$PROJECT_DIR$/lib/vk_api.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/vk_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/members_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/socials_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/vk_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/v1/events_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
       </list>
     </option>
   </component>
@@ -319,6 +318,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -349,6 +349,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharinatorServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharinatorServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -430,69 +444,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SharinatorServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="v1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -545,6 +497,28 @@
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharinatorServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharinatorServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -566,7 +540,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,10 +553,19 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\controllers\v1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views\v1" />
+      <recent name="C:\Users\dmitr_000\Documents\GitHub\SharinatorServer\app\views" />
+    </key>
   </component>
   <component name="RunManager" selected="Rails.Development: SharinatorServer">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -1062,7 +1044,11 @@
       <created>1374147133416</created>
       <updated>1374147133416</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added events and event-user relationships">
+      <created>1374187724819</created>
+      <updated>1374187724819</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1089,22 +1075,22 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17480999" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22860238" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22535211" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917318" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917318" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24066168" sideWeight="0.82519" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22801302" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16542156" sideWeight="0.7746479" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22751896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1152,7 +1138,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed users-&gt;socials relation 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added events and event-user relationships" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1190,119 +1176,94 @@
     <MESSAGE value=" Migration to Postgres 4" />
     <MESSAGE value="Fixed users-&gt;socials relation" />
     <MESSAGE value="Fixed users-&gt;socials relation 2" />
+    <MESSAGE value="Added events and event-user relationships" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/vk_controller.rb">
+    <entry file="file://$PROJECT_DIR$/lib/vk_api.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="66" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
+        <state line="7" column="4" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/development.log">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/socials_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="726" column="0" selection-start="41707" selection-end="41707" vertical-scroll-proportion="0.0">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/vk/authenticate.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/members_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="37" selection-end="37" vertical-scroll-proportion="-0.6666667">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/event.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="68" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="47" selection-start="1704" selection-end="1723" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/socials/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/member.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/socials/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/v1/socials/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/socials/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="201" selection-end="201" vertical-scroll-proportion="-9.153846">
+        <state line="8" column="93" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/socials/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/events_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="74" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/socials/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/social.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="457" selection-end="457" vertical-scroll-proportion="-11.115385">
+        <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="-7.8461537">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/destroy.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/v1/vk_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="144" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="16" selection-start="85" selection-end="85" vertical-scroll-proportion="0.123726346">
+        <state line="8" column="9" selection-start="158" selection-end="158" vertical-scroll-proportion="0.19738752">
           <folding />
         </state>
       </provider>

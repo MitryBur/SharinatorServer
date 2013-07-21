@@ -1,4 +1,4 @@
-class SocialsController < ApplicationController
+class V1::SocialsController < ApplicationController
   before_action :set_social, only: [:show, :edit, :update, :destroy]
 
   # GET /socials
