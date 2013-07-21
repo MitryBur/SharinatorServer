@@ -7,7 +7,7 @@ class VkController < ApplicationController
 	def authenticate
     token = params[:access_token]
     @uid = params[:user_id]
-    if token.empty?
+    if !token
         render text: 'Error: Davai token, bleat!'
         return
     end
