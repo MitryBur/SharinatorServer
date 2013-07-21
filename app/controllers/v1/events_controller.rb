@@ -26,6 +26,7 @@ class V1::EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.owner_id = (Social.find_by_vk_token params[:access_token]).user_id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -69,7 +70,7 @@ class V1::EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :owner_id, :description)
+      params.require(:event).permit(:title, :description)
     end
 
 		def restrict_access
