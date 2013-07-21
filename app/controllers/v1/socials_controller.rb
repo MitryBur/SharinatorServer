@@ -1,5 +1,6 @@
 class V1::SocialsController < ApplicationController
-  before_action :set_social, only: [:show, :edit, :update, :destroy]
+		before_filter :restrict_access
+		before_action :set_social, only: [:show, :edit, :update, :destroy]
 
   # GET /socials
   # GET /socials.json
@@ -71,4 +72,11 @@ class V1::SocialsController < ApplicationController
     def social_params
       params.require(:social).permit(:name, :surname, :social_id)
     end
+
+		def restrict_access
+				token = params[:access_token]
+				unless token && Social.find_by_vk_token(token)
+						head :unauthorized
+				end
+		end
 end

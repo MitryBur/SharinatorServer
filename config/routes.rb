@@ -1,14 +1,14 @@
 SharinatorServer::Application.routes.draw do
-	namespace :v1 do
+	namespace :v1, defaults: {format: :json} do
 		resources :members
 		resources :events
-		resources :socials
-		resources :users
+    resources :socials
+    resources :users
 	end
+  get 'vk' => 'vk#authenticate'
+  get 'vk/friends' => 'vk#get_friends'
 
-	get 'vk' => 'vk#authenticate'
-
-		# The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

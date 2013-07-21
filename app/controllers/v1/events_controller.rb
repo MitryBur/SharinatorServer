@@ -1,6 +1,6 @@
 class V1::EventsController < ApplicationController
-
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+		before_filter :restrict_access
+		before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -71,4 +71,11 @@ class V1::EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :owner_id, :description)
     end
+
+		def restrict_access
+				token = params[:access_token]
+				unless token && Social.find_by_vk_token(token)
+						head :unauthorized
+				end
+		end
 end

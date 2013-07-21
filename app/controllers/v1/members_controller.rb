@@ -1,5 +1,6 @@
 class V1::MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
+		before_filter :restrict_access
+		before_action :set_member, only: [:show, :edit, :update, :destroy]
 
   # GET /members
   # GET /members.json
@@ -71,4 +72,12 @@ class V1::MembersController < ApplicationController
     def member_params
       params.require(:member).permit(:user_id, :event_id)
     end
+
+
+		def restrict_access
+				token = params[:access_token]
+				unless token && Social.find_by_vk_token(token)
+						head :unauthorized
+				end
+		end
 end

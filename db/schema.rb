@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130718202644) do
+ActiveRecord::Schema.define(version: 20130721201327) do
 
   create_table "attendances", force: true do |t|
     t.integer  "user_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20130718202644) do
     t.integer  "vk_id",      limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "vk_token"
   end
 
   create_table "users", force: true do |t|

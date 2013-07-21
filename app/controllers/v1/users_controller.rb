@@ -1,8 +1,6 @@
 class V1::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
-
-
+	before_filter :restrict_access
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -73,4 +71,17 @@ class V1::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:social_id)
     end
+
+		"def restrict_access
+			authenticate_or_request_with_http_token do |access_token|
+					Social.exists? vk_token: access_token
+			end
+		end"
+
+		def restrict_access
+			token = params[:access_token]
+			unless token && Social.find_by_vk_token(token)
+				head :unauthorized
+			end
+		end
 end
