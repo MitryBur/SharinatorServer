@@ -17,6 +17,7 @@ class V1::MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
+
     if @member.save
       render action: 'show', status: :created, location: [:v1, @member]
     else
