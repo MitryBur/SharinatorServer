@@ -1,7 +1,7 @@
 class V1::EventsController < ApplicationController
 		before_filter :restrict_access
 		before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+    respond_to :json
   # GET /events
   # GET /events.json
   def index
@@ -13,42 +13,25 @@ class V1::EventsController < ApplicationController
   def show
   end
 
-  # GET /events/new
-  def new
-    @event = Event.new
-  end
-
-  # GET /events/1/edit
-  def edit
-  end
-
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
     @event.owner_id = (Social.find_by_vk_token params[:access_token]).user_id
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @event }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      render action: 'show', status: :created, location: [:v1, @event]
+    else
+      render json: @event.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.update(event_params)
+      head :no_content
+    else
+      render json: @event.errors, status: :unprocessable_entity
     end
   end
 
@@ -56,10 +39,7 @@ class V1::EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 
   private
@@ -78,5 +58,5 @@ class V1::EventsController < ApplicationController
 				unless token && Social.find_by_vk_token(token)
 						head :unauthorized
 				end
-		end
+    end
 end

@@ -1,12 +1,13 @@
 SharinatorServer::Application.routes.draw do
-	namespace :v1, defaults: {format: :json} do
-		resources :members
-		resources :events
-    resources :socials
-    resources :users
-	end
-  get 'vk' => 'vk#authenticate'
-  get 'vk/friends' => 'vk#get_friends'
+	namespace :v1 do
+    resources :members, except: [:new, :edit], defaults: {format: :json}
+		resources :events, except: [:new, :edit], defaults: {format: :json}
+    resources :socials, except: [:new, :edit], defaults: {format: :json}
+    resources :users, except: [:new, :edit], defaults: {format: :json}
+    get 'vk', to: 'vk#authenticate'
+    get 'vk/friends', to: 'vk#get_friends'
+
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
