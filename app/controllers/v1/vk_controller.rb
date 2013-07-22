@@ -9,27 +9,28 @@ class V1::VkController < ApplicationController
     token = params[:access_token]
     @uid = params[:user_id]
     if !token
-        render text: 'Error: Davay token, bleat!'
+        render text: 'Error! Davay token, bleat!'
         return
     end
-    @res = VkAPI.request token: token, method: 'users.get', vk_params:"#{@uid}"
+    @res = VkAPI.request token: token, method: 'users.get', vk_params:"uids=#{@uid}"
 	  @resBody = @res.body
 	  jsonRes = JSON.parse @resBody
     if jsonRes['error']
-        render json: jsonRes
+        render json: jsonRes['error']['error_msg']
         return
     end
 
-	  @exists = 'User exists'
+	  @exists = 'User exists.'
 	  @user_data = jsonRes['response'][0]
     @user = User.first(include: :social, conditions: {socials: {vk_id: @uid}})
 	  if !@user
 			@exists = 'User did not exist. Created one, buddy.'
 			create_user vk_id: @uid, name: @user_data['first_name'], surname: @user_data['last_name'], vk_token: token
     elsif !@user.social.vk_token.eql? token
-      @user.social.vk_token = token
+      @user.social.update vk_token: token
+      @exists = 'Token updated.'
     end
-    render text: 'Success!'
+    render text: 'Success! '+ @exists
   end
 
 
