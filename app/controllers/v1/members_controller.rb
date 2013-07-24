@@ -20,7 +20,7 @@ class V1::MembersController < ApplicationController
   # POST /members.json
   def create
     @member = Member.new(member_params)
-    vk_id = member_params[:user_id]
+    vk_id = params[:user_id] #Here user_id is actually a vk_id
     user = User.first(include: :social, conditions: {socials: {vk_id: vk_id}})
     unless user
       user = create_user vk_id: vk_id
