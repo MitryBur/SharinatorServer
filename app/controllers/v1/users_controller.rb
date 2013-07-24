@@ -1,6 +1,6 @@
 class V1::UsersController < ApplicationController
 	before_filter :restrict_access
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:show, :update, :destroy]
   respond_to :json
   # GET /users
   # GET /users.json

@@ -4,7 +4,7 @@ require 'json'
 require 'vk_api'
 
 class V1::VkController < ApplicationController
-	before_filter :restrict_access, :except => :authenticate
+	#before_filter :restrict_access, :except => :authenticate
 	def authenticate
     token = params[:access_token]
     @uid = params[:user_id]

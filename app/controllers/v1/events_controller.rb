@@ -1,6 +1,6 @@
 class V1::EventsController < ApplicationController
 		before_filter :restrict_access
-		before_action :set_event, only: [:show, :edit, :update, :destroy]
+		before_action :set_event, only: [:show, :update, :destroy]
     respond_to :json
   # GET /events
   # GET /events.json

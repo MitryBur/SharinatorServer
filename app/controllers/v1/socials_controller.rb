@@ -1,6 +1,6 @@
 class V1::SocialsController < ApplicationController
 		before_filter :restrict_access
-		before_action :set_social, only: [:show, :edit, :update, :destroy]
+		before_action :set_social, only: [:show, :update, :destroy]
     respond_to :json
   # GET /socials
   # GET /socials.json
