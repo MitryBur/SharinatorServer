@@ -1,6 +1,9 @@
 class SocialidToInteger < ActiveRecord::Migration
-		def up
-				connection.execute(%q{
+
+  #def up
+   # change_column :socials, :social_id, :integer
+begin
+    connection.execute(%q{
             alter table socials
             alter column social_id
             type integer using cast(social_id as integer)
@@ -10,5 +13,5 @@ class SocialidToInteger < ActiveRecord::Migration
             alter column social_id
             type integer using cast(social_id as integer)
         })
-		end
+    end
 end
