@@ -1,11 +1,17 @@
 SharinatorServer::Application.routes.draw do
 
 	namespace :v1 do
+
+    resources :events, except: [:new, :edit], defaults: {format: :json} do
+      resources :expenses, except: [:new, :edit], defaults: {format: :json}
+    end
+
     resources :members, except: [:new, :edit], defaults: {format: :json}
-		resources :events, except: [:new, :edit], defaults: {format: :json}
-    resources :socials, except: [:new, :edit], defaults: {format: :json}
+
+		resources :socials, except: [:new, :edit], defaults: {format: :json}
+
     resources :users, except: [:new, :edit], defaults: {format: :json}
-    resources :expenses, except: [:new, :edit], defaults: {format: :json}
+
 
     get 'vk', to: 'vk#authenticate'
     get 'vk/friends', to: 'vk#get_friends'

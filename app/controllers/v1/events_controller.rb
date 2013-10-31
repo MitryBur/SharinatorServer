@@ -1,7 +1,9 @@
 class V1::EventsController < ApplicationController
-		before_filter :restrict_access
-		before_action :set_event, only: [:show, :update, :destroy]
+		#before_filter :restrict_access
+		#before_action :set_event, only: [:show, :update, :destroy]
+
     respond_to :json
+
   # GET /events
   # GET /events.json
   def index
@@ -17,7 +19,10 @@ class V1::EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.owner_id = (Social.find_by_vk_token params[:access_token]).user_id
+
+    #TODO move this shit to Social
+    #@event.owner_id = (Social.find_by_vk_token params[:access_token]).user_id
+
     if @event.save
       render action: 'show', status: :created, location: [:v1, @event]
     else
@@ -28,7 +33,8 @@ class V1::EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    if @event.update(event_params)
+    #TODO params -> strong_params
+    if @event.update(params)
       head :no_content
     else
       render json: @event.errors, status: :unprocessable_entity
@@ -44,19 +50,20 @@ class V1::EventsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
+    def get_event(id)
+      Event.find(id)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def event_params
-      params.require(:event).permit(:title, :description)
+      params.require(:owner_id)
     end
 
-		def restrict_access
-				token = params[:access_token]
-				unless token && Social.find_by_vk_token(token)
-						head :unauthorized
-				end
-    end
+
+    #def restrict_access
+			#	token = params[:access_token]
+			#	unless token && Social.find_by_vk_token(token)
+			#			head :unauthorized
+			#	end
+    #end
 end
