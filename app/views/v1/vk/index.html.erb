@@ -1,2 +1,1 @@
-<%= "ololo #{link_to "Label", :controller => :vk_controller, :action => :authenticate}"%>
-<a href=<%=@vk_oauth_url + "&redirect_uri=#{link_to :authenticate}"%> title="Зайти через ВКонтакте">Зайти через ВКонтакте</a>
+<a href=<%=@vk_oauth_url + "&redirect_uri=#{link_to 'vk'}"%> title="Зайти через ВКонтакте">Зайти через ВКонтакте</a>
