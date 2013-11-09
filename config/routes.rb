@@ -15,6 +15,7 @@ SharinatorServer::Application.routes.draw do
 
     get 'vk', to: 'vk#authenticate'
     get 'vk/friends', to: 'vk#get_friends'
+    get 'vk/index', to: 'vk#index'
 
   end
 
