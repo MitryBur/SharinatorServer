@@ -10,6 +10,10 @@ class V1::VkController < ApplicationController
   def index
     vk_oauth_base = "https://oauth.vk.com/authorize"
     app_id = "3984515"
+
+    #vk_access_token_address = "https://api.vk.com/oauth/access_token"
+    #@vk_oauth_url = "#{vk_access_token_address}?client_id=#{app_id}&client_secret=#{secret_key}&grant_type=client_credentials"
+
     redirect_uri = url_for controller: 'v1/vk', action: 'authenticate'
     @vk_oauth_url = "#{vk_oauth_base}?client_id=#{app_id}&response_type=token&display=popup&redirect_uri=#{redirect_uri}"
   end
