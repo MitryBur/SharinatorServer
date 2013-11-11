@@ -37,19 +37,20 @@ class V1::VkController < ApplicationController
     end
 
 
-    message = 'User exists.'
-    user_data = vk_access.get_user_data
 
-    user = User.first(include: :social, conditions: {socials: {vk_id: @uid}})
-    if !user
-      message = 'User did not exist. Created one, buddy.'
-      create_user vk_id: @uid, name: user_data['first_name'], surname: user_data['last_name'], vk_token: @vk_access_token
-    elsif !user.social.vk_token.eql? @vk_access_token
-      user.social.update vk_token: @vk_access_token
-      message = 'Token updated.'
-    end
+    #message = 'User exists.'
+    #user_data = vk_access.get_user_data
+    #
+    #user = User.first(include: :social, conditions: {socials: {vk_id: @uid}})
+    #if !user
+    #  message = 'User did not exist. Created one, buddy.'
+    #  create_user vk_id: @uid, name: user_data['first_name'], surname: user_data['last_name'], vk_token: @vk_access_token
+    #elsif !user.social.vk_token.eql? @vk_access_token
+    #  user.social.update vk_token: @vk_access_token
+    #  message = 'Token updated.'
+    #end
 
-    render text: 'Success! '+ @message
+    render text: "Success, name: #{vk_access.get_user_data}"
   end
 
 
