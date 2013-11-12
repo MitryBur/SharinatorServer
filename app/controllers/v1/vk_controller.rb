@@ -25,9 +25,9 @@ class V1::VkController < ApplicationController
     app_secret = "HxkhUwxMrELhkANIXMYE"
     app_id = "3984515"
 
-    redirect_uri = url_for controller: 'v1/vk', action: 'authenticate'
-
-    token_url = "https://oauth.vk.com/access_token?client_id=#{app_id}&client_secret=#{app_secret}&code=#{params[:code]}"
+    #redirect_uri = url_for controller: 'v1/vk', action: 'authenticate'
+    redirect_uri = url_for controller: 'v1/vk', action: 'get_access_token'
+    token_url = "https://oauth.vk.com/access_token?client_id=#{app_id}&client_secret=#{app_secret}&code=#{params[:code]}&redirect_uri=#{redirect_uri}"
     response = VkAPI.request_url token_url
 
     render text: "Ok!" + response.body
