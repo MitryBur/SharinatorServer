@@ -14,8 +14,24 @@ class V1::VkController < ApplicationController
     #vk_access_token_address = "https://api.vk.com/oauth/access_token"
     #@vk_oauth_url = "#{vk_access_token_address}?client_id=#{app_id}&client_secret=#{secret_key}&grant_type=client_credentials"
 
+    redirect_uri = url_for controller: 'v1/vk', action: 'get_access_token'
+    @vk_oauth_url = "#{vk_oauth_base}?client_id=#{app_id}&response_type=code&display=popup&redirect_uri=#{redirect_uri}&scope=offline"
+
+  end
+
+
+  def get_access_token
+    params.require(:code)
+    app_secret = "HxkhUwxMrELhkANIXMYE"
+    app_id = "3984515"
+
     redirect_uri = url_for controller: 'v1/vk', action: 'authenticate'
-    @vk_oauth_url = "#{vk_oauth_base}?client_id=#{app_id}&response_type=token&display=popup&redirect_uri=#{redirect_uri}&scope=offline"
+
+    token_url = "https://oauth.vk.com/access_token?client_id=#{app_id}&client_secret=#{app_secret}&code=#{params[:code]}"
+    response = VkAPI.request_url token_url
+    result = JSON.parse response.body
+
+    render text: "Ok!" + result
   end
 
 
