@@ -29,9 +29,8 @@ class V1::VkController < ApplicationController
 
     token_url = "https://oauth.vk.com/access_token?client_id=#{app_id}&client_secret=#{app_secret}&code=#{params[:code]}"
     response = VkAPI.request_url token_url
-    result = JSON.parse response.body
 
-    render text: "Ok!" + result
+    render text: "Ok!" + response.body
   end
 
 
