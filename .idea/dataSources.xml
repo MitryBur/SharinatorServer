@@ -3,8 +3,8 @@
   <component name="DataSourceManagerImpl" format="xml" hash="2083733880">
     <data-source source="LOCAL" name="Rails SharinatorServer: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3ce8c474-d82e-4492-975a-bb5a163fc5e5">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/shari_development</jdbc-url>
-      <user-name>Mitry</user-name>
+      <jdbc-url>jdbc:postgresql:shari_development</jdbc-url>
+      <user-name>mitry</user-name>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
@@ -16,8 +16,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails SharinatorServer: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3fa61ded-6181-4d0f-b8ee-091bb73d0f32">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/shari_production</jdbc-url>
-      <user-name>Mitry</user-name>
+      <jdbc-url>jdbc:postgresql:shari_production</jdbc-url>
+      <user-name>mitry</user-name>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
@@ -29,8 +29,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails SharinatorServer: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="0f9a4ad9-fe02-45f8-afae-2f35ec29e276">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/shari_test</jdbc-url>
-      <user-name>Mitry</user-name>
+      <jdbc-url>jdbc:postgresql:shari_test</jdbc-url>
+      <user-name>blog</user-name>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>
