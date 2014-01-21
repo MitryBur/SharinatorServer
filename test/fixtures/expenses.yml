@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  user_id: 
+no_event_id:
   event_id:
-  title: Title
   amount: 1.5
   description: MyText
 
-two:
-  user_id: 
-  event_id:
-  title: Title
+with_event_id:
+  event_id: 12
   amount: 1.5
   description: MyText

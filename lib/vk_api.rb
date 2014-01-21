@@ -5,5 +5,14 @@ class VkAPI
 		http.use_ssl = true
 		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 		http.get(@url.to_s)
-	end
+  end
+
+  def self.request_url url
+    @url = URI.parse url
+    http = Net::HTTP.new(@url.host, @url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    http.get(@url.to_s)
+  end
+
 end

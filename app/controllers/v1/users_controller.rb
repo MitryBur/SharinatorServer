@@ -1,7 +1,10 @@
 class V1::UsersController < ApplicationController
+
 	before_filter :restrict_access
 	before_action :set_user, only: [:show, :update, :destroy]
   respond_to :json
+
+
   # GET /users
   # GET /users.json
   def index
@@ -52,12 +55,15 @@ class V1::UsersController < ApplicationController
       params.require(:user).permit(:social_id)
     end
 
+
     #Pass token through content-type
-		"def restrict_access
-			authenticate_or_request_with_http_token do |access_token|
-					Social.exists? vk_token: access_token
-			end
-		end"
+    #"def restrict_access
+			#authenticate_or_request_with_http_token do |access_token|
+			#		Social.exists? vk_token: access_token
+			#end
+    #end"
+
+
     #Pass token as parameter
 		def restrict_access
 			token = params[:access_token]
@@ -65,4 +71,6 @@ class V1::UsersController < ApplicationController
 				head :unauthorized
 			end
     end
+
+
 end
