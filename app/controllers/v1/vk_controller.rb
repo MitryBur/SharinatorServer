@@ -68,22 +68,14 @@ class V1::VkController < ApplicationController
     render text: "Success, name: #{vk_access.get_user_data}"
   end
 
-
   def get_friends
-    fields = "fields=first_name,last_name,sex"
+    fields = 'fields=first_name,last_name,sex'
     token = params[:access_token]
-    res = VkAPI.request token: token, method: 'friends.get', vk_params: "#{fields}"
+    @res = VkAPI.request token: token, method: 'friends.get', vk_params:"#{fields}"
     render json: @res.body
   end
 
   private
-
-	def get_friends
-		fields = 'fields=first_name,last_name,sex'
-		token = params[:access_token]
-    @res = VkAPI.request token: token, method: 'friends.get', vk_params:"#{fields}"
-		render json: @res.body
-	end
   def require_vk_auth_params
     params.require(:access_token)
     params.require(:user_id)
