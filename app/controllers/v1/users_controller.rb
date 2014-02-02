@@ -59,7 +59,7 @@ class V1::UsersController < ApplicationController
     #Pass token through content-type
     #"def restrict_access
 			#authenticate_or_request_with_http_token do |access_token|
-			#		Social.exists? vk_token: access_token
+			#		SocialProfile.exists? vk_token: access_token
 			#end
     #end"
 
@@ -67,7 +67,7 @@ class V1::UsersController < ApplicationController
     #Pass token as parameter
 		def restrict_access
 			token = params[:access_token]
-			unless token && Social.find_by_vk_token(token)
+			unless token && SocialProfile.find_by_vk_token(token)
 				head :unauthorized
 			end
     end

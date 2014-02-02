@@ -56,7 +56,7 @@ class V1::VkController < ApplicationController
     #message = 'User exists.'
     #user_data = vk_access.get_user_data
     #
-    #user = User.first(include: :social, conditions: {socials: {vk_id: @uid}})
+    #user = User.first(include: :social, conditions: {social_profiles: {vk_id: @uid}})
     #if !user
     #  message = 'User did not exist. Created one, buddy.'
     #  create_user vk_id: @uid, name: user_data['first_name'], surname: user_data['last_name'], vk_token: @vk_access_token
@@ -83,15 +83,15 @@ class V1::VkController < ApplicationController
 
   def create_user params
     @user = User.create
-    @social = Social.create vk_id: params[:vk_id], name: params[:name], surname: params[:surname], vk_token: params[:vk_token]
-    @user.social = @social
+    @social = SocialProfile.create vk_id: params[:vk_id], name: params[:name], surname: params[:surname], vk_token: params[:vk_token]
+    @user.social_profile = @social
     @user
   end
 
 
   def restrict_access
     token = params[:access_token]
-    unless token && Social.find_by_vk_token(token)
+    unless token && SocialProfile.find_by_vk_token(token)
       head :unauthorized
     end
   end

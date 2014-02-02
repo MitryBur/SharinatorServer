@@ -16,7 +16,7 @@ socials_list = [
 
 socials_list.each do |name, surname, vk_id|
 		user = User.create
-		social = Social.create name: name, surname: surname, vk_id: vk_id
+		social = SocialProfile.create name: name, surname: surname, vk_id: vk_id
 		user.social = social
 end
 

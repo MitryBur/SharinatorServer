@@ -11,23 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723203638) do
+ActiveRecord::Schema.define(version: 20140203203638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: true do |t|
-    t.text     "title"
-    t.string   "owner_id"
-    t.text     "description"
+  create_table "debts", force: true do |t|
+    t.float    "amount"
+    t.integer  "debtor_id",   null: false
+    t.integer  "creditor_id", null: false
+    t.integer  "expense_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "events", force: true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "image_url"
+    t.integer  "owner_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_users", id: false, force: true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+  end
+
+  add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
+
   create_table "expenses", force: true do |t|
     t.integer  "event_id"
-    t.float    "amount"
+    t.float    "price"
+    t.text     "currency"
+    t.text     "title"
     t.text     "description"
+    t.date     "due_date"
+    t.text     "image_url"
+    t.integer  "payer_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,24 +63,14 @@ ActiveRecord::Schema.define(version: 20130723203638) do
 
   add_index "expenses_users", ["expense_id", "user_id"], name: "index_expenses_users_on_expense_id_and_user_id", using: :btree
 
-  create_table "members", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "members", ["event_id"], name: "index_members_on_event_id", using: :btree
-  add_index "members", ["user_id"], name: "index_members_on_user_id", using: :btree
-
-  create_table "socials", force: true do |t|
-    t.integer  "user_id"
+  create_table "social_profiles", force: true do |t|
     t.text     "name"
     t.text     "surname"
     t.integer  "vk_id"
+    t.text     "vk_access_token"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "vk_token"
   end
 
   create_table "users", force: true do |t|

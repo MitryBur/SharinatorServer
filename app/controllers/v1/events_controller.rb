@@ -20,8 +20,8 @@ class V1::EventsController < ActionController::Base
   def create
     @event = Event.create(create_event_params)
 
-    #TODO move this shit to Social
-    #@event.owner_id = (Social.find_by_vk_token params[:access_token]).user_id
+    #TODO move this shit to SocialProfile
+    #@event.owner_id = (SocialProfile.find_by_vk_token params[:access_token]).user_id
 
     if @event.save
       render action: 'show', status: :created, location: [:v1, @event]
@@ -64,7 +64,7 @@ class V1::EventsController < ActionController::Base
 
   #def restrict_access
   #	token = params[:access_token]
-  #	unless token && Social.find_by_vk_token(token)
+  #	unless token && SocialProfile.find_by_vk_token(token)
   #			head :unauthorized
   #	end
   #end

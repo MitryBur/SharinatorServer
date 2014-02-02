@@ -1,22 +1,22 @@
-class V1::SocialsController < ApplicationController
+class V1::SocialProfilesController < ApplicationController
 		before_filter :restrict_access
 		before_action :set_social, only: [:show, :update, :destroy]
     respond_to :json
-  # GET /socials
-  # GET /socials.json
+  # GET /social_profiles
+  # GET /social_profiles.json
   def index
-    @socials = Social.all
+    @socials = SocialProfile.all
   end
 
-  # GET /socials/1
-  # GET /socials/1.json
+  # GET /social_profiles/1
+  # GET /social_profiles/1.json
   def show
   end
 
-  # POST /socials
-  # POST /socials.json
+  # POST /social_profiles
+  # POST /social_profiles.json
   def create
-    @social = Social.new(social_params)
+    @social = SocialProfile.new(social_params)
     if @social.save
       render action: 'show', status: :created, location: [:v1, @social]
     else
@@ -24,8 +24,8 @@ class V1::SocialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /socials/1
-  # PATCH/PUT /socials/1.json
+  # PATCH/PUT /social_profiles/1
+  # PATCH/PUT /social_profiles/1.json
   def update
     if @social.update(social_params)
       head :no_content
@@ -34,8 +34,8 @@ class V1::SocialsController < ApplicationController
     end
   end
 
-  # DELETE /socials/1
-  # DELETE /socials/1.json
+  # DELETE /social_profiles/1
+  # DELETE /social_profiles/1.json
   def destroy
     @social.destroy
     head :no_content
@@ -44,7 +44,7 @@ class V1::SocialsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_social
-      @social = Social.find(params[:id])
+      @social = SocialProfile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -54,7 +54,7 @@ class V1::SocialsController < ApplicationController
 
 		def restrict_access
 				token = params[:access_token]
-				unless token && Social.find_by_vk_token(token)
+				unless token && SocialProfile.find_by_vk_token(token)
 						head :unauthorized
 				end
     end
