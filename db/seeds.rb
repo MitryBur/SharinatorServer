@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+=begin
 socials_list = [
 		['Petr', 'Ivanov', 31],
 		['Valery', 'Gryaznova', 32],
@@ -28,3 +29,4 @@ events_list = [
 events_list.each do |title, description, owner_id|
 		Event.create title: title, description: description, owner_id: owner_id
 end
+=end

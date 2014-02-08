@@ -1,1 +1,1 @@
-json.extract! @social, :name, :surname, :social_id, :created_at, :updated_at
+json.extract! @social_profile, :name, :surname, :vk_id, :created_at, :updated_at

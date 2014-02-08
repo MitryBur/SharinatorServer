@@ -51,21 +51,22 @@ class V1::VkController < ApplicationController
       return
     end
 
+    user_data = vk_access.get_user_data
 
+    user = User.joins(:social_profile).where(social_profiles: {vk_id: @uid}).first
 
-    #message = 'User exists.'
-    #user_data = vk_access.get_user_data
-    #
-    #user = User.first(include: :social, conditions: {social_profiles: {vk_id: @uid}})
-    #if !user
-    #  message = 'User did not exist. Created one, buddy.'
-    #  create_user vk_id: @uid, name: user_data['first_name'], surname: user_data['last_name'], vk_token: @vk_access_token
-    #elsif !user.social.vk_token.eql? @vk_access_token
-    #  user.social.update vk_token: @vk_access_token
-    #  message = 'Token updated.'
-    #end
-
-    render text: "Success, name: #{vk_access.get_user_data}"
+    if !user
+      create_user vk_id: @uid, name: user_data['first_name'], surname: user_data['last_name'], vk_token: @vk_access_token
+      #message = 'User did not exist. Created one, buddy.'
+      render json: user, status: :created
+      return
+    elsif !user.social_profile.vk_access_token.eql? @vk_access_token
+      user.social_profile.update vk_token: @vk_access_token
+      #'Token updated.'
+      render json: user, status: :accepted
+      return
+    end
+    render json: user, status: :ok
   end
 
   def get_friends
@@ -83,7 +84,7 @@ class V1::VkController < ApplicationController
 
   def create_user params
     @user = User.create
-    @social = SocialProfile.create vk_id: params[:vk_id], name: params[:name], surname: params[:surname], vk_token: params[:vk_token]
+    @social = SocialProfile.create vk_id: params[:vk_id], name: params[:name], surname: params[:surname], vk_access_token: params[:vk_token]
     @user.social_profile = @social
     @user
   end
@@ -91,12 +92,10 @@ class V1::VkController < ApplicationController
 
   def restrict_access
     token = params[:access_token]
-    unless token && SocialProfile.find_by_vk_token(token)
+    unless token && SocialProfile.find_by_vk_access_token(token)
       head :unauthorized
     end
   end
-
-
 end
 
 

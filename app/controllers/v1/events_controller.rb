@@ -62,10 +62,10 @@ class V1::EventsController < ActionController::Base
   end
 
 
-  #def restrict_access
-  #	token = params[:access_token]
-  #	unless token && SocialProfile.find_by_vk_token(token)
-  #			head :unauthorized
-  #	end
-  #end
+  def restrict_access
+  	token = params[:access_token]
+  	unless token && SocialProfile.find_by_vk_access_token(token)
+  			head :unauthorized
+  	end
+  end
 end

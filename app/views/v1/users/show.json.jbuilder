@@ -1,1 +1,4 @@
-json.extract! @user, :user_id, :social_id, :created_at, :updated_at
+json.extract! @user, :id, :created_at, :updated_at
+json.social_profile do |json|
+  json.(@user.social_profile, :name, :surname, :vk_id)
+end

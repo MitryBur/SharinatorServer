@@ -52,7 +52,7 @@ class V1::ExpensesController < ApplicationController
 
 
   def get_event(id)
-    Events.find(id)
+    Expense.find(id)
   end
 
 

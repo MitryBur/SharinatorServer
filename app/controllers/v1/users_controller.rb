@@ -1,6 +1,6 @@
 class V1::UsersController < ApplicationController
 
-	before_filter :restrict_access
+	#before_filter :restrict_access
 	before_action :set_user, only: [:show, :update, :destroy]
   respond_to :json
 
@@ -52,7 +52,7 @@ class V1::UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:social_id)
+      params.require(:user).permit(:social_profile_attributes => [:name, :surname, :vk_id, :vk_access_token])
     end
 
 
@@ -67,7 +67,7 @@ class V1::UsersController < ApplicationController
     #Pass token as parameter
 		def restrict_access
 			token = params[:access_token]
-			unless token && SocialProfile.find_by_vk_token(token)
+			unless token && SocialProfile.find_by_vk_access_token(token)
 				head :unauthorized
 			end
     end
