@@ -1,9 +1,9 @@
 json.array!(@events) do |event|
   json.extract! event, :id, :title, :owner_id, :description
-  json.members event.users do |json, user|
+  json.users event.users do |user|
     json.(user, :id)
-    json.social do |json|
-      json.(user.social, :vk_id, :name, :surname)
+    json.social_profile do |json|
+      json.(user.social_profile, :vk_id, :name, :surname)
      end
    end
 end

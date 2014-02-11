@@ -21,7 +21,7 @@ class V1::ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @event = get_event(params[:event_id])
+      @event = get_event(params[:event_id])
     @expense = @event.expenses.new(expense_params)
 
     if @expense.save

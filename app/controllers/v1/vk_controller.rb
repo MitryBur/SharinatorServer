@@ -98,8 +98,6 @@ class V1::VkController < ApplicationController
   end
 end
 
-
-
 class VKAccessResponse
   def initialize httpResponse
     @json_response = JSON.parse httpResponse.body

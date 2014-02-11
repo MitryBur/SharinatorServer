@@ -1,6 +1,6 @@
 class V1::EventsController < ActionController::Base
   #before_filter :restrict_access
-  #before_action :set_event, only: [:show, :update, :destroy]
+  before_action :set_event, only: [:show, :update, :destroy]
 
   respond_to :json
 
@@ -18,10 +18,19 @@ class V1::EventsController < ActionController::Base
   # POST /events
   # POST /events.json
   def create
-    @event = Event.create(create_event_params)
+    #Split event_params into nested attributes and event attributes
+    #event_params_without_nested = event_params.dup
+    #event_params_without_nested.delete :users_attributes
+    #@event = Event.create(event_params_without_nested)
+
+    event_params[:users_attributes].each do |u|
+      SocialProfile.where(:vk_id=>u[:social_profile_attributes][:vk_id]).load.delete_all
+    end
+
+    @event = Event.create(event_params)
 
     #TODO move this shit to SocialProfile
-    #@event.owner_id = (SocialProfile.find_by_vk_token params[:access_token]).user_id
+    #event.owner_id = (SocialProfile.find_by_vk_access_token params[:access_token]).user_id
 
     if @event.save
       render action: 'show', status: :created, location: [:v1, @event]
@@ -50,15 +59,12 @@ class V1::EventsController < ActionController::Base
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def get_event(id)
-    Event.find(id)
+  def set_event
+    @event = Event.find(params[:id])
   end
 
-
-  def create_event_params
-    params.require(:owner_id)
-    params.require(:title)
-    params.permit(:title, :description, :owner_id)
+  def event_params
+    params.require(:event).permit(:title, :description, :image_url, :owner_id, :users_attributes => [:social_profile_attributes => [:name, :surname, :vk_id, :vk_access_token]])
   end
 
 
@@ -69,3 +75,4 @@ class V1::EventsController < ActionController::Base
   	end
   end
 end
+
