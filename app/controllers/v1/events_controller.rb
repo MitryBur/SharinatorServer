@@ -23,14 +23,17 @@ class V1::EventsController < ActionController::Base
     #event_params_without_nested.delete :users_attributes
     #@event = Event.create(event_params_without_nested)
 
-    event_params[:users_attributes].each do |u|
-      SocialProfile.where(:vk_id=>u[:social_profile_attributes][:vk_id]).load.delete_all
+    if event_params[:users_attributes]
+      event_params[:users_attributes].each do |u|
+        SocialProfile.where(:vk_id=>u[:social_profile_attributes][:vk_id]).load.delete_all
+      end
     end
 
-    @event = Event.create(event_params)
+    @event = Event.new(event_params)
 
     #TODO move this shit to SocialProfile
-    #event.owner_id = (SocialProfile.find_by_vk_access_token params[:access_token]).user_id
+    @event.owner_id = (SocialProfile.find_by_vk_access_token params[:access_token]).user_id
+    @event.users << User.find(@event.owner_id);
 
     if @event.save
       render action: 'show', status: :created, location: [:v1, @event]

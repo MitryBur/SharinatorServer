@@ -19,7 +19,7 @@ class V1::UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    unless SocialProfile.where(:vk_id=>user_params[:social_profile_attributes][:vk_id]).first
+    if SocialProfile.where(:vk_id=>user_params[:social_profile_attributes][:vk_id]).first
       head :no_content
       return
     end
