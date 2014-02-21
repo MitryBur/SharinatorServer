@@ -12,9 +12,5 @@ class CreateExpenses < ActiveRecord::Migration
       t.integer :payer_id, :null => false
       t.timestamps
     end
-    create_table :expenses_users, :id => false do |t|
-      t.references :expense, :user
-    end
-    add_index :expenses_users, [:expense_id, :user_id]
-  end
+ end
 end

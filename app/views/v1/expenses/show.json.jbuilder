@@ -1,7 +1,4 @@
-json.extract! @expense, :title, :event_id, :amount, :description
-json.users @expense.users do |user|
-  json.(user, :id)
-  json.social do |json|
-    json.(user.social, :vk_id, :name, :surname)
-   end
+json.extract! @expense, :title, :event_id, :price, :description
+json.debts @expense.debts do |debt|
+  json.(debt, :id, :amount, :debtor_id, :creditor_id)
 end

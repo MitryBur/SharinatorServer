@@ -56,13 +56,6 @@ ActiveRecord::Schema.define(version: 20140203203638) do
 
   add_index "expenses", ["event_id"], name: "index_expenses_on_event_id", using: :btree
 
-  create_table "expenses_users", id: false, force: true do |t|
-    t.integer "expense_id"
-    t.integer "user_id"
-  end
-
-  add_index "expenses_users", ["expense_id", "user_id"], name: "index_expenses_users_on_expense_id_and_user_id", using: :btree
-
   create_table "social_profiles", force: true do |t|
     t.text     "name"
     t.text     "surname"

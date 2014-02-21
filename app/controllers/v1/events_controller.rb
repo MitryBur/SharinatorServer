@@ -23,15 +23,14 @@ class V1::EventsController < ActionController::Base
     #event_params_without_nested.delete :users_attributes
     #@event = Event.create(event_params_without_nested)
 
-    if event_params[:users_attributes]
-      event_params[:users_attributes].each do |u|
+    if event_params_for_create[:users_attributes]
+      event_params_for_create[:users_attributes].each do |u|
         SocialProfile.where(:vk_id=>u[:social_profile_attributes][:vk_id]).load.delete_all
       end
     end
 
-    @event = Event.new(event_params)
+    @event = Event.new(event_params_for_create)
 
-    #TODO move this shit to SocialProfile
     @event.owner_id = (SocialProfile.find_by_vk_access_token params[:access_token]).user_id
     @event.users << User.find(@event.owner_id);
 
@@ -66,10 +65,13 @@ class V1::EventsController < ActionController::Base
     @event = Event.find(params[:id])
   end
 
-  def event_params
+  def event_params_for_create
     params.require(:event).permit(:title, :description, :image_url, :owner_id, :users_attributes => [:social_profile_attributes => [:name, :surname, :vk_id, :vk_access_token]])
   end
 
+  def event_params
+    params.require(:event).permit(:title, :description, :image_url, :owner_id, :users => [:social_profile => [:name, :surname, :vk_id, :vk_access_token]])
+  end
 
   def restrict_access
   	token = params[:access_token]

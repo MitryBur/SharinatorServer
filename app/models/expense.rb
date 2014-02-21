@@ -4,5 +4,5 @@ class Expense < ActiveRecord::Base
   belongs_to :event
   belongs_to :payer, class_name: 'User'
   has_many :debts
-  #accepts_nested_attributes_for :users
+  accepts_nested_attributes_for :payer
 end
