@@ -62,7 +62,7 @@ class V1::ExpensesController < ApplicationController
       @expense = Expense.find(params[:id])
     end
     def set_event
-      @event = Event.find(params[:event_id])
+      @event = Event.find(expense_params[:event_id])
     end
     def expense_params
       params.require(:expense).permit(:event_id, :price, :currency, :title, :due_date, :description, :image_url)
