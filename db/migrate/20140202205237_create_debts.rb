@@ -4,6 +4,7 @@ class CreateDebts < ActiveRecord::Migration
       t.float :amount
       t.integer :debtor_id, :null => false
       t.integer :creditor_id, :null => false
+      t.boolean :actual, :default => true
       t.references :expense
       t.timestamps
     end

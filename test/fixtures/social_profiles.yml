@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyText
-  surname: MyText
-  vk_id: 1
-
-two:
-  name: MyText
-  surname: MyText
-  vk_id: 1
+mitry_profile:
+  id: 1
+  name: Mitry
+  surname: Burmistrov
+  vk_id: 6157
+  vk_access_token: afgafg8afg8afg884tgas
+  user_id: 1
+misha_profile:
+  id: 2
+  name: Misha
+  surname: Burmistrov
+  vk_id: 12145355
+  vk_access_token: agahfadhgadfgjlhergr
+  user_id: 2

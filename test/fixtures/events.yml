@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyText
-  owner_id: MyString
-  description: MyText
+ruka:
+  title: Ruka
+  owner_id: 1
+  description: Trip to Finnish Ruka
 
-two:
-  title: MyText
-  owner_id: MyString
-  description: MyText
+birthday:
+  title: Mitry Birthday
+  owner_id: 2
+  description: 24 Mitry's birthday
+

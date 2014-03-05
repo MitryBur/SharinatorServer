@@ -2,6 +2,10 @@
 
 one:
   amount: 1.5
+  debtor_id: 1
+  creditor_id: 2
 
 two:
-  amount: 1.5
+  amount: 3
+  debtor_id: 2
+  creditor_id: 1

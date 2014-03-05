@@ -70,7 +70,7 @@ class V1::VkController < ApplicationController
   end
 
   def get_friends
-    fields = 'fields=first_name,last_name,sex'
+    fields = 'fields=first_name,last_name,sex&order=name'
     token = params[:access_token]
     @res = VkAPI.request token: token, method: 'friends.get', vk_params:"#{fields}"
     render json: @res.body
