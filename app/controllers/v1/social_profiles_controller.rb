@@ -18,7 +18,7 @@ class V1::SocialProfilesController < ApplicationController
   def create
     @social_profile = SocialProfile.create(social_profile_params)#where(:vk_id => social_profile_params[:vk_id]).first_or_initialize(social_profile_params)
     if @social_profile.save
-      render action: 'show', status: :created, location: [:v1, @social_ptrofile]
+      render action: 'show', status: :created, location: [:v1, @social_profile]
     else
       render json: @social_profile.errors, status: :unprocessable_entity
     end
