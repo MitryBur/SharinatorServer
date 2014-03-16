@@ -1,26 +1,29 @@
 class V1::ExpensesController < ApplicationController
   #before_filter :restrict_access
   before_action :set_expense, only: [:show, :update, :destroy]
+  before_action :determine_scope, only: [:index, :create]
 
+  helper_method :debtors_for_expense
 
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    #TO DO make debtors for each expense
+    @expenses = @scope.all
   end
 
   # GET /expenses/1
   # GET /expenses/1.json
   def show
     #@expense = //@event.expenses.find(params[:id])
-    set_payer
+    #set_payer
     set_debtors
   end
 
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = @event.expenses.new(expense_params)
+    @expense = Expense.new(expense_params)
     @expense.payer_id = (SocialProfile.find_by_vk_access_token params[:access_token]).user_id
 
     params[:expense][:users].each do |user|
@@ -55,7 +58,13 @@ class V1::ExpensesController < ApplicationController
     @expense.destroy
     head :no_content
   end
-
+  def debtors_for_expense expense
+    @debtors = []
+    expense.debts.each do |debt|
+      @debtors<<User.find(debt.debtor_id)
+    end
+    return @debtors
+  end
   private
     def set_expense
       @expense = Expense.find(params[:id])
@@ -77,8 +86,18 @@ class V1::ExpensesController < ApplicationController
       @expense.debts.each do |debt|
         @debtors<<User.find(debt.debtor_id)
       end
+      return @debtors
     end
+
     def set_payer
       @payer = User.find(@expense.payer_id)
+    end
+
+    def determine_scope
+      @scope = if params[:event_id]
+                 Event.find(params[:event_id]).expenses
+               else
+                 Expense
+               end
     end
 end

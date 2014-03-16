@@ -61,7 +61,7 @@ class V1::VkController < ApplicationController
       render json: user, status: :created
       return
     elsif !user.social_profile.vk_access_token.eql? @vk_access_token
-      user.social_profile.update vk_token: @vk_access_token
+      user.social_profile.update vk_access_token: @vk_access_token
       #'Token updated.'
       render json: user, status: :accepted
       return
