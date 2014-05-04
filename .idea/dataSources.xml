@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1627805084">
+  <component name="DataSourceManagerImpl" format="xml" hash="2047170886">
     <data-source source="LOCAL" name="Rails SharinatorServer: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3ce8c474-d82e-4492-975a-bb5a163fc5e5">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/shari_development</jdbc-url>
@@ -27,7 +27,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails SharinatorServer: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="c3605432-b735-43fa-ac84-cd36126cc0c8">
+    <data-source source="LOCAL" name="Rails SharinatorServer: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="6dfe6e04-f83f-40d8-8684-aa0bafe739ed">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/shari_test</jdbc-url>
       <user-name>Mitry</user-name>

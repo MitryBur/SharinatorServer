@@ -58,7 +58,7 @@ class V1::ExpensesController < ApplicationController
     @expense.destroy
     head :no_content
   end
-  def debtors_for_expense expense
+  def debtors_for_expense(expense)
     @debtors = []
     expense.debts.each do |debt|
       @debtors<<User.find(debt.debtor_id)

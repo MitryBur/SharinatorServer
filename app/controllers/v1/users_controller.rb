@@ -20,7 +20,7 @@ class V1::UsersController < ApplicationController
   # POST /users.json
   def create
     if SocialProfile.where(:vk_id=>user_params[:social_profile_attributes][:vk_id]).first
-      head :no_content
+      render text:'{"Error":"already exists"}'
       return
     end
     @user = User.new(user_params)
