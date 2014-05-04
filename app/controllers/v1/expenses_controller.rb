@@ -2,7 +2,7 @@ class V1::ExpensesController < ApplicationController
   #before_filter :restrict_access
   before_action :set_expense, only: [:show, :update, :destroy]
   before_action :determine_scope, only: [:index, :create]
-
+ #test comment added
   helper_method :debtors_for_expense
 
   # GET /expenses

@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1061e149-8ead-4326-9ade-1ab9242e0323" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/event.rb" afterPath="$PROJECT_DIR$/app/models/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/v1/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/expense.rb" afterPath="$PROJECT_DIR$/app/models/expense.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/v1/expenses_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/expenses_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/v1/expenses/index.json.jbuilder" afterPath="$PROJECT_DIR$/app/views/v1/expenses/index.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/v1/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/v1/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SharinatorServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +67,7 @@
     <file path="/a.dummy" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374477743645" ignored="false" />
     <file path="/expense.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1395611750699" ignored="false" />
     <file path="/20130723203638_create_expenses.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1391376694109" ignored="false" />
-    <file path="/expenses_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1394928186277" ignored="false" />
+    <file path="/expenses_controller.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1399243329187" ignored="false" />
     <file path="/20130724202858_add_expense_title.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374697794996" ignored="false" />
     <file path="/expenses_controller_test.rb" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1374697938279" ignored="false" />
     <file path="/expenses.yml" changelist="1061e149-8ead-4326-9ade-1ab9242e0323" time="1394046160489" ignored="false" />
@@ -124,7 +116,7 @@
       <file leaf-file-name="expenses_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/v1/expenses_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="7" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.5952381">
+            <state line="4" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.10204082">
               <folding />
             </state>
           </provider>
@@ -1609,7 +1601,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/v1/expenses_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="7" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.5952381">
+        <state line="4" column="20" selection-start="228" selection-end="228" vertical-scroll-proportion="0.10204082">
           <folding />
         </state>
       </provider>
